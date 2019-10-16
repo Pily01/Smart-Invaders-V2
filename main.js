@@ -3,6 +3,7 @@ var canvas;
 var canvBack;
 
 var spaceship;
+var bullets = [];
 
 /////////////// S E T  U P ////////////
 function setup() {
@@ -15,11 +16,19 @@ function setup() {
 
 /////////////// D R A W  //////////////
 function draw() {
-  //--Background
+  // --Background
   background(38, 41, 50);
   canvBack.show();
 
-  //--Spaceship
+  // --Spaceship
   spaceship.show();
   spaceship.move();
+
+  // -- Bullets
+  for (var i = bullets.length - 1; i > 0; i--) {
+    bullets[i].move();
+    bullets[i].show();
+  }
 }
+
+/////////  K E Y  P R E S S E D  //////
