@@ -9,4 +9,21 @@ class Game {
     this.bullets = [];
     this.currentLevel = new Level(initialPopulation, 1);
   }
+
+  // -- Accesor methods
+  getLevel = function() {
+    return this.currentLevel;
+  };
+
+  getInvaderPopObject = function() {
+    return this.currentLevel.invaderPopulation;
+  };
+
+  getInvaderPopArray = function() {
+    return this.currentLevel.invaderPopulation.population;
+  };
+
+  getInvadersNum = function() {
+    return this.currentLevel.invaderPopulation.getNumber();
+  };
 }
