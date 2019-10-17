@@ -42,6 +42,10 @@ class InvaderPopulation {
     this.population.push(invader);
     this.number++;
   };
+
+  getNumber = function() {
+    return this.number;
+  };
 }
 
 /////// G E T  R A N D O M  N U M B E R /////////
