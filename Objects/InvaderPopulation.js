@@ -31,9 +31,9 @@ class InvaderPopulation {
 
   // -- Create a Random Invader
   createRandInvader = function() {
-    var direction = directionOptions[getRandomNumber(0, 8)] + "";
-    var speed = speedOptions[getRandomNumber(0, 8)] + "";
-    var size = sizeOptions[getRandomNumber(0, 8)] + "";
+    var direction = getRandomNumber(0, 8) + "";
+    var speed = getRandomNumber(0, 8) + "";
+    var size = getRandomNumber(0, 8) + "";
 
     var flib = direction + speed + size;
     var randX = getRandomNumber(80, 500);
@@ -42,12 +42,12 @@ class InvaderPopulation {
     this.population.push(invader);
     this.number++;
   };
-
-  /////// G E T  R A N D O M  N U M B E R /////////
-  // -- Returns a random number between min (inclusive) and
-  // -- max (exclusive)
-  getRandomNumber = function(min, max) {
-    var result = Math.floor(Math.random() * (max - min)) + min;
-    return result;
-  };
 }
+
+/////// G E T  R A N D O M  N U M B E R /////////
+// -- Returns a random number between min (inclusive) and
+// -- max (exclusive)
+getRandomNumber = function(min, max) {
+  var result = Math.floor(Math.random() * (max - min)) + min;
+  return result;
+};
