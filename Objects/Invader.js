@@ -20,7 +20,7 @@ class Invader {
   constructor(x, y, flib) {
     this.x = x;
     this.y = y;
-    this.move = 1;
+    this.dir = 1;
 
     this.alive = true;
     this.crossed = false;
