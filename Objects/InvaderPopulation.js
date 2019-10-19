@@ -10,7 +10,7 @@ var directionOptions = [
   "digonalL",
   "static",
   "random",
-  "circles"
+  "diagonalR"
 ];
 var speedOptions = [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4];
 var sizeOptions = [7, 10, 15, 18, 20, 23, 25, 30];

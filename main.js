@@ -33,6 +33,8 @@ function setup() {
   invaderNum = game.getInvadersNum();
 }
 
+/////////// S H O W  S C O R E  &  L I V E S  //////
+
 /////////////// D R A W  //////////////
 function draw() {
   // --Background
@@ -50,12 +52,24 @@ function draw() {
       invaderArr[i].show();
       invaderArr[i].move();
       invaderArr[i].checkCrossed();
+      if (invaderArr[i].didCross()) {
+        document.getElementById("livestext").innerHTML = game.lives;
+      }
     }
   }
   //  -- Bullets
   for (var i = bullets.length - 1; i > 0; i--) {
     bullets[i].move();
     bullets[i].show();
+    for (var j = invaderNum - 1; j >= 0; j--) {
+      if (invaderArr[j].alive && bullets[i].hits(invaderArr[j])) {
+        bullets.splice(i, 1);
+        invaderArr[j].die();
+        game.score += 10;
+        document.getElementById("scoretext").innerHTML = game.score;
+        break;
+      }
+    }
   }
 }
 
